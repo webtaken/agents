@@ -1,0 +1,15 @@
+Django
+dj_rest_auth
+dj_database_url
+django_allauth
+django_environ
+djangorestframework
+djangorestframework_simplejwt
+django-cors-headers
+psycopg2
+uvicorn
+gunicorn
+whitenoise
+drf-spectacular
+requests
+cryptography
