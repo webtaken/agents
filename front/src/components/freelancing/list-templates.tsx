@@ -430,12 +430,13 @@ function JobDescriptionPopover({
   template: string;
   userData: UserData;
 }) {
+  const [open, setOpen] = useState(false);
   const [jobDescription, setJobDescription] = useState("");
   const { submitUserMessage } = useActions();
   const [_, setMessages] = useUIState();
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button size="sm">Use this one</Button>
       </PopoverTrigger>
@@ -469,6 +470,7 @@ Note: Fill the square brackets using the freelancer information and the job desc
                 ...currentMessages,
                 response,
               ]);
+              setOpen(false);
             }}
           >
             Generate cover letter

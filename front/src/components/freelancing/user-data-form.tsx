@@ -10,6 +10,7 @@ import { UserData } from "./types";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { USER_DATA_STORAGE_KEY } from "./data";
 import { toast } from "sonner";
+import Feedback from "./feedback";
 
 const suggestions = ["Show me the templates"];
 
@@ -73,7 +74,7 @@ export function UserDataForm({ fromChat }: { fromChat?: boolean }) {
     <>
       <form
         onSubmit={handleSubmit}
-        className="bg-white rounded-md px-5 space-y-4"
+        className="bg-white rounded-md px-5 py-2 space-y-4"
       >
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>
@@ -162,6 +163,7 @@ export function UserDataForm({ fromChat }: { fromChat?: boolean }) {
               {suggestion}
             </Button>
           ))}
+          <Feedback />
         </div>
       )}
     </>

@@ -11,8 +11,8 @@ import {
 import { useActions, useUIState } from "ai/rsc";
 import { useEffect } from "react";
 import { toast } from "sonner";
-import { UserDataDialog } from "@/components/freelancing/user-data-dialog";
 import { UserDataForm } from "@/components/freelancing/user-data-form";
+import Feedback from "@/components/freelancing/feedback";
 
 const convertMessage = (message: UIState[number]): VercelRSCMessage => {
   return {
@@ -82,7 +82,11 @@ export default function Page() {
         welcome={{
           suggestions: [
             {
-              text: "Show available templates",
+              text: <Feedback />,
+              prompt: "",
+            },
+            {
+              text: "Show me some templates",
               prompt: "Please show me the cover letter templates",
             },
             {
